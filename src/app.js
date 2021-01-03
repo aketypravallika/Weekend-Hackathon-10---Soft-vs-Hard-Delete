@@ -15,6 +15,7 @@ app.get('/students', async (req, res) => {
     try{
         const students = await Student.find();
         res.status(200).json(students);
+        console.log(students);
     } catch(error) {
         res.status(404).json({error})
     }
@@ -33,7 +34,12 @@ app.post('/students', async (req, res) =>{
 
 // Get specific student
 app.get('/students/:id', async (req, res) =>{
-    // write your codes here
+    try{
+        const students = await Student.findById(req.params.id);
+        res.status(200).json(students);
+    } catch(error) {
+        res.status(404).json({error})
+    }
 })
 
 // delete specific student

@@ -13,4 +13,4 @@ mongoose.connect(url,{ useNewUrlParser: true, useUnifiedTopology: true }, () => 
 })
 
 
-app.listen(3030, () => console.log('Server running......'));
+app.listen(3000, () => console.log('Server running......'));
